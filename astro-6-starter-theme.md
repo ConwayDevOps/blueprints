@@ -885,7 +885,7 @@ Default output is **static** — ideal for SEO and for hosts like Netlify, Verce
 
 ---
 
-## 12. Known gotchas (Astro 6-specific) ⚠️
+## 12. Known gotchas (Astro 6-x) 
 
 1. **Don't run `npx astro add tailwind` on Astro 6.** Astro 6 defaults to `rolldown-vite`, and the auto-installed `@tailwindcss/vite` plugin can fail the build with a `Missing field tsconfigPaths` / `BindingViteResolvePluginConfig` error (tracked in `withastro/astro#16542`). **Fix:** wire `@tailwindcss/vite` manually (as in §4). If the build still fails on rolldown-vite, fall back to the **PostCSS path**: `npm install @tailwindcss/postcss postcss`, remove the Vite plugin, and add a `postcss.config.mjs` with `export default { plugins: { '@tailwindcss/postcss': {} } }`. Check whether the issue is resolved in your exact 6.4.x patch first.
 
@@ -900,18 +900,3 @@ Default output is **static** — ideal for SEO and for hosts like Netlify, Verce
 6. **Content Layer API names changed.** Use `entry.id` (not `entry.slug`) and `render(entry)` imported from `astro:content` (not `entry.render()`).
 
 7. **`site` must be set** in `astro.config.mjs` or canonical URLs, Open Graph images, RSS links, and the sitemap will all be broken.
-
----
-
-## 13. SEO acceptance checklist
-
-- [ ] `site` set to the production domain in `astro.config.mjs`
-- [ ] Every page renders a unique `<title>` and meta description via `BaseHead`
-- [ ] `<link rel="canonical">` present and absolute on every page
-- [ ] Open Graph (`og:title`, `og:description`, `og:image`, `og:url`, `og:type`) on every page
-- [ ] `og:image` is an absolute URL (1200×630 default in `public/og-default.png`)
-- [ ] Articles send `type="article"` + `article:published_time`
-- [ ] `twitter:card = summary_large_image` with image
-- [ ] `/sitemap-index.xml` builds and is referenced in `robots.txt`
-- [ ] `/rss.xml` builds and is auto-discoverable via `<link rel="alternate">`
-- [ ] Validate with a social-card debugger and Google Rich Results / Search Console after deploy
