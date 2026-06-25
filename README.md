@@ -3,4 +3,5 @@
 
 ---
 
-- [Create an Astro 6.4.7 Starter Theme](https://github.com/ConwayDevOps/blueprints/blob/main/astro-6-starter-theme.md) with Tailwind CSS 4 & daisyUI 5. SEO-ready with canonical URLs, Open Graph, XML Sitemaps, and RSS. Publish pages, blogs, case studies using native Astro, Markdown, or MDX.
+- [Create an Astro 7.0.2 Starter Theme](https://github.com/jamesconwaydev/blueprints/blob/main/astro-7-starter-theme.md) with Tailwind CSS 4.3. SEO-ready with canonical URLs, Open Graph, JSON-LD, XML Sitemaps, and RSS. Publish pages and blog posts using native Astro, or MDX.
+- [Create an Astro 6.4.7 Starter Theme](https://github.com/ConwayDevOps/blueprints/blob/main/astro-6-starter-theme.md) with Tailwind CSS 4 & daisyUI 5. SEO-ready with canonical URLs, Open Graph, XML Sitemaps, and RSS. Publish pages, blogs, case studies using native Astro, or MDX.
